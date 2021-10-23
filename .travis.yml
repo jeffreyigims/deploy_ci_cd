@@ -1,12 +1,18 @@
 language: ruby
+addons:
+  chrome: beta
+before_install:
+  — cd BookManager
+  — rails server
+  — "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 rvm: 2.5.7
 script:
- — cd BookManager — jobs=3 — retry=3
- — bundle install
- — bundle exec rake db:create
- — bundle exec rake db:migrate
- — bundle exec rspec
- — rails test test/selenium_tests
+  — cd BookManager — jobs=3 — retry=3
+  — bundle install
+  — bundle exec rake db:create
+  — bundle exec rake db:migrate
+  — bundle exec rspec
+  — rails test test/selenium_tests
 
 # deploy:
 #   provider: heroku
