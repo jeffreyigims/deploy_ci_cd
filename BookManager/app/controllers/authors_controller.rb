@@ -24,7 +24,6 @@ class AuthorsController < ApplicationController
   # POST /authors
   # POST /authors.json
   def create
-    byebug
     @author = Author.new(author_params)
 
     if @author.save

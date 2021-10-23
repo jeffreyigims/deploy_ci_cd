@@ -6,9 +6,11 @@ script:
  — bundle exec rake db:create
  — bundle exec rake db:migrate
  — bundle exec rspec
-deploy:
-  provider: heroku
-  api_key: 
-    secure: "4363ed76-1093-421e-a957-1ce7d575732a"
-  app: bookmanager
-  on: main
+ — rails test test/selenium_tests
+
+# deploy:
+#   provider: heroku
+#   api_key: 
+#     secure: "4363ed76-1093-421e-a957-1ce7d575732a"
+#   app: bookmanager
+#   on: main
