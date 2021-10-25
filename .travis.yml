@@ -1,11 +1,15 @@
 language: ruby
 addons:
   chrome: beta
-before_install:
-  — cd BookManager
-  — gem install bundler:2.2.7
-  — rails server
-  — "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
+branches:
+  if: type = pull_request
+  only: 
+    - main
+# before_install:
+#   — cd BookManager
+#   — gem install bundler:2.2.7
+#   — rails server
+#   — "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 rvm: 2.5.7
 script:
   — cd BookManager — jobs=3 — retry=3
