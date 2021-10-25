@@ -1,10 +1,10 @@
 language: ruby
 addons:
   chrome: beta
-branches:
-  if: type = pull_request
-  only: 
-    - main
+# branches:
+#   if: type = pull_request
+#   only: 
+#     - main
 # before_install:
 #   — cd BookManager
 #   — gem install bundler:2.2.7
