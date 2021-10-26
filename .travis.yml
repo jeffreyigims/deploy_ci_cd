@@ -13,11 +13,11 @@ before_install:
 rvm: 2.5.7
 script:
   — cd BookManager — jobs=3 — retry=3
+  — rails test test/selenium_tests
   # — bundle install
   # — bundle exec rake db:create
   # — bundle exec rake db:migrate
   # — bundle exec rspec
-  — rails test test/selenium_tests
 ##
 # deploy:
 #   provider: heroku
