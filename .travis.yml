@@ -6,8 +6,7 @@ addons:
 #   only: 
 #     - main
 before_install:
-  # — cd BookManager
-  # — gem install bundler:2.2.7
+  — cd BookManager
   — bundle exec rails server
   — "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 rvm: 2.5.7
