@@ -145,6 +145,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
+    pg (1.2.3)
     public_suffix (4.0.6)
     puma (3.12.6)
     pusher-client (0.6.2)
@@ -227,7 +228,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -273,6 +273,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mimemagic!
+  pg
   puma (~> 3.11)
   rails (= 5.2.4.4)
   rspec-rails
@@ -280,7 +281,6 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
   travis
   turbolinks (~> 5)
   tzinfo-data
