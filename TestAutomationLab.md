@@ -6,11 +6,13 @@
 
 ## Part 1: Setup 
 
-1. Install the [Heroku](https://devcenter.heroku.com/articles/heroku-cli) and [Travis](https://github.com/travis-ci/travis.rb#readme) command line clients. 
+1. Create a [Heroku](https://www.heroku.com) if you don't have one already. 
 
-2. Login to both clients with `heroku login` and `travis login --com`. Note we must use `--com` in every travis command.
+2. Install the [Heroku](https://devcenter.heroku.com/articles/heroku-cli) and [Travis](https://github.com/travis-ci/travis.rb#readme) command line clients. 
 
-3. Make sure you have access to the BookManager repository we created for the BookManager Docker lab.
+3. Login to both clients with `heroku login` and `travis login --com`. Note we must use `--com` in every travis command.
+
+4. Make sure you have access to the BookManager repository we created for the BookManager Docker lab.
 
 ## Part 2: Travis Introduction 
 
