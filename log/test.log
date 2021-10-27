@@ -5243,3 +5243,330 @@ SeleniumTests: test_test_creating_a_publisher
 SeleniumTests: test_test_creating_an_author
 -------------------------------------------
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mALTER TABLE "authors" DISABLE TRIGGER ALL;ALTER TABLE "book_authors" DISABLE TRIGGER ALL;ALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "publishers" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (6.0ms)[0m  [1m[31mDELETE FROM "book_authors";
+DELETE FROM "authors";
+DELETE FROM "books";
+DELETE FROM "publishers";
+INSERT INTO "book_authors" ("id", "book_id", "author_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2021-10-27 22:51:09.116611', '2021-10-27 22:51:09.116611'), (298486374, 1, 1, '2021-10-27 22:51:09.116611', '2021-10-27 22:51:09.116611');
+INSERT INTO "authors" ("id", "first_name", "last_name", "created_at", "updated_at") VALUES (980190962, 'MyString', NULL, '2021-10-27 22:51:09.140475', '2021-10-27 22:51:09.140475'), (298486374, 'MyString', NULL, '2021-10-27 22:51:09.140475', '2021-10-27 22:51:09.140475');
+INSERT INTO "books" ("id", "title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-27 22:51:09.146273', '2021-10-27 22:51:09.146273'), (298486374, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-27 22:51:09.146273', '2021-10-27 22:51:09.146273');
+INSERT INTO "publishers" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2021-10-27 22:51:09.152160', '2021-10-27 22:51:09.152160'), (298486374, 'MyString', '2021-10-27 22:51:09.152160', '2021-10-27 22:51:09.152160')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "authors" ENABLE TRIGGER ALL;ALTER TABLE "book_authors" ENABLE TRIGGER ALL;ALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "publishers" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+AuthorsControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/authors/980190962/edit" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by AuthorsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering authors/edit.html.erb within layouts/application
+  Rendered authors/_form.html.erb (23.6ms)
+  Rendered authors/edit.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 218ms (Views: 211.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (4.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+AuthorsControllerTest: test_should_show_author
+----------------------------------------------
+  [1m[36mAuthor Load (2.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/authors/980190962" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+AuthorsControllerTest: test_should_create_author
+------------------------------------------------
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (23.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+Started POST "/authors" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"first_name"=>"MyString", "last_name"=>nil}}
+  [1m[35m (42.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (39.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (1.6ms)
+  Rendered authors/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 91ms (Views: 6.5ms | ActiveRecord: 82.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (1.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+AuthorsControllerTest: test_should_destroy_author
+-------------------------------------------------
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (56.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+Started DELETE "/authors/980190962" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAuthor Destroy (0.3ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/authors
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+AuthorsControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/authors/new" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (1.6ms)
+  Rendered authors/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+AuthorsControllerTest: test_should_update_author
+------------------------------------------------
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/authors/980190962" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by AuthorsController#update as HTML
+  Parameters: {"author"=>{"first_name"=>"MyString", "last_name"=>nil}, "id"=>"980190962"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering authors/edit.html.erb within layouts/application
+  Rendered authors/_form.html.erb (1.6ms)
+  Rendered authors/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+AuthorsControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/authors" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------
+AuthorTest: test_author_creation
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+BooksControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/books" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+BooksControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/books/new" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (6.1ms)
+  Rendered books/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+BooksControllerTest: test_should_show_book
+------------------------------------------
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/books/980190962" for 127.0.0.1 at 2021-10-27 18:51:09 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+BooksControllerTest: test_should_destroy_book
+---------------------------------------------
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started DELETE "/books/980190962" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/books
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+BooksControllerTest: test_should_update_book
+--------------------------------------------
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/books/980190962" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by BooksController#update as HTML
+  Parameters: {"book"=>{"contract_date"=>"2017-09-11", "proposal_date"=>"2017-09-11", "published_date"=>"2017-09-11", "publisher_id"=>"1", "title"=>"MyString", "units_sold"=>"1"}, "id"=>"980190962"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.7ms)
+  Rendered books/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 23ms (Views: 7.5ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+BooksControllerTest: test_should_create_book
+--------------------------------------------
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+Started POST "/books" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"contract_date"=>"2017-09-11", "proposal_date"=>"2017-09-11", "published_date"=>"2017-09-11", "publisher_id"=>"1", "title"=>"MyString", "units_sold"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.5ms)
+  Rendered books/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+BooksControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/books/980190962/edit" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.2ms)
+  Rendered books/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+PublishersControllerTest: test_should_create_publisher
+------------------------------------------------------
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "publishers"[0m
+Started POST "/publishers" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPublisher Create (0.4ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "MyString"], ["created_at", "2021-10-27 22:51:10.067371"], ["updated_at", "2021-10-27 22:51:10.067371"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/publishers/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[36mPublisher Load (0.4ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" ORDER BY "publishers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+PublishersControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/publishers/980190962/edit" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by PublishersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPublisher Load (0.4ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering publishers/edit.html.erb within layouts/application
+  Rendered publishers/_form.html.erb (1.6ms)
+  Rendered publishers/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------
+PublishersControllerTest: test_should_destroy_publisher
+-------------------------------------------------------
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "publishers"[0m
+Started DELETE "/publishers/980190962" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by PublishersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPublisher Destroy (0.3ms)[0m  [1m[31mDELETE FROM "publishers" WHERE "publishers"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/publishers
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+PublishersControllerTest: test_should_update_publisher
+------------------------------------------------------
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/publishers/980190962" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by PublishersController#update as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/publishers/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+PublishersControllerTest: test_should_get_new
+---------------------------------------------
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/publishers/new" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by PublishersController#new as HTML
+  Rendering publishers/new.html.erb within layouts/application
+  Rendered publishers/_form.html.erb (0.8ms)
+  Rendered publishers/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+PublishersControllerTest: test_should_get_index
+-----------------------------------------------
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/publishers" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by PublishersController#index as HTML
+  Rendering publishers/index.html.erb within layouts/application
+  [1m[36mPublisher Load (0.3ms)[0m  [1m[34mSELECT "publishers".* FROM "publishers"[0m
+  Rendered publishers/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+PublishersControllerTest: test_should_show_publisher
+----------------------------------------------------
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/publishers/980190962" for 127.0.0.1 at 2021-10-27 18:51:10 -0400
+Processing by PublishersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPublisher Load (0.2ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering publishers/show.html.erb within layouts/application
+  Rendered publishers/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
