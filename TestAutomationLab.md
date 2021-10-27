@@ -18,7 +18,7 @@
 
 [Travis CI](https://www.travis-ci.com) is a tool that supports configuring applications to support continous integration. The core of the tool is to help us automate our builds, testing, and deployments. 
 
-1. Go to [travis](https://travis-ci.com/) and [sign up with GitHub](https://travis-ci.com/signin). Accept the Authorization of Travis CI. You’ll be redirected to GitHub. Click on your profile picture in the top right of your Travis Dashboard, click Settings and then the green Activate button, and select the BookManager repo so we can use it with Travis CI.
+1. Let's link our repository to travis. Go to [travis](https://travis-ci.com/) and [sign up with GitHub](https://travis-ci.com/signin). Accept the Authorization of Travis CI. You’ll be redirected to GitHub. Click on your profile picture in the top right of your Travis Dashboard, click Settings and then the green Activate button, and select the BookManager repo so we can use it with Travis CI.
 
 1. Our first rule of development is to never work off of the main branch. Check out a different branch for us to work on called `staging`. 
 
@@ -41,7 +41,16 @@
 	
 5. Let's push our changes to GitHub with the `.travis.yml` file now added. We can see the status of our build on GitHub and on Travis. On GitHub, navigate to our branch and click on the status symbol next to the unique commit identifier and then click details to view our Travis checks. We can also see the status from the [Travis](https://travis-ci.com) dashboard. Verify that the build successfully completes.
 
-6. Now we have incorporated testing into our continous integration strategy but what about deployment? We can configure Travis to deploy our application on a successful build. Travis supports a plethora of deployment engines; We will use Heroku for our purposes. Navigate back to your `.travis.yml` file and paste in the following contents:
+6. Now we have incorporated testing into our continous integration strategy but what about deployment? We can configure Travis to deploy our application on a successful build. Travis supports a plethora of deployment engines; We will use Heroku for our purposes. 
+
+7. We need to set up an app on Heroku to deploy to. Go to [Heroku](www.heroku.com) and create a new app. Give the app any valid name. Select GitHub as our deployment method and then link our repository to the new app by searching for it. Enable automatic deploys from the main branch and select the option to wait for continuous integration to pass before deploying.
+
+
+8. Go back to the command line at the root of our repository and run `heroku git:remote -a NAME_OF_APP_PLACEHOLDER` to create a remote reference to our repo. We can now deploy directly to our Heroku app if we want. 
+
+
+
+Navigate back to your `.travis.yml` file and paste in the following contents:
 
 	```
 	deploy:
