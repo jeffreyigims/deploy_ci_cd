@@ -1,27 +1,23 @@
 language: ruby
-# addons:
-#   apt:
-#     sources:
-#     - google-chrome
-#     packages:
-#     - google-chrome-stable
-# before_install: "— gem install bundler:2.2.7 — cd BookManager — bundle exec rails
-#   server"
-##########
+addons:
+  chrome: stable
+before_install: 
+  - # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 rvm: 2.7.4
-services:
-  - postgresql
-before_script:
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate
-script: 
-  - "bundle exec rails test test/controllers/authors_controller_test"
-deploy:
-  provider: heroku 
-  api_key:
-    secure: onmwiL3PCLaKCpl6bWJ6BTmsgTATQlYgxWVgCdRb/I/F59a4Rk6cPFJZwoPGGHLO40N+rR50++KalHhYlae3YXkZVKjjuO+ZcJohuxEgmfDHShkP+2V0ZmodiOnY1l5prda152mDMxj/iBXHHnS5+rI7hVbAnRvTSEFT3N+O+gZeXtus90EoKRzG9i1QRmAOqpUbWUMmpzqP2LbzdCN4T5SNRDY2Uvqe3TM+KpfRXx25fyslaMQEEZkZr9s17XclXRSbchBa0NyjP0/vaOX98IsXWwBbZslWE3B6E3hWussWdtiTfIv2m+2otPcHAWNbZmmLeWiMXj1wViiIH7/gS4X2Za1AMcRyCFkFILh9Jb9M1rz+POwvg3ZtVa6MrhaYm/F/bkTjwIDiIXODJtgVNvS6vWP6NDKCc5Baul68l87DmmSKby05Z+uHoEXVhn75wk8ms74wp2IpJzDmqEc7qGEGJYkmw46j/FgCOZVKXX61RFhxCum0kA+jXO0h09ypPgaM2Uuwn6nFuuhNE3gE1q2U1BXoZcazJlHIxIrvsgjCU/RxJmpEEtLw4jy/dNDV3o9PZ/SqOvQOoPUm7EqPdJui8Y9oiWBatnbpaBPPv08FzTMqyg9zfpNaeDR0lfz7SeKW4Ak/3gJtWLC57N7DLhY/oqF6YBkFTJN/b+prE7I=
-  app: bookmanager4
-  on: main
-  run:
-    - "rails db:migrate"
-    - "rails db:seed"
+# services:
+#   - postgresql
+# before_script:
+#   - bundle exec rails db:create
+#   - bundle exec rails db:migrate
+# script: 
+#   - "bundle exec rails test test/controllers/authors_controller_test"
+# deploy:
+#   provider: heroku 
+#   api_key:
+#     secure: onmwiL3PCLaKCpl6bWJ6BTmsgTATQlYgxWVgCdRb/I/F59a4Rk6cPFJZwoPGGHLO40N+rR50++KalHhYlae3YXkZVKjjuO+ZcJohuxEgmfDHShkP+2V0ZmodiOnY1l5prda152mDMxj/iBXHHnS5+rI7hVbAnRvTSEFT3N+O+gZeXtus90EoKRzG9i1QRmAOqpUbWUMmpzqP2LbzdCN4T5SNRDY2Uvqe3TM+KpfRXx25fyslaMQEEZkZr9s17XclXRSbchBa0NyjP0/vaOX98IsXWwBbZslWE3B6E3hWussWdtiTfIv2m+2otPcHAWNbZmmLeWiMXj1wViiIH7/gS4X2Za1AMcRyCFkFILh9Jb9M1rz+POwvg3ZtVa6MrhaYm/F/bkTjwIDiIXODJtgVNvS6vWP6NDKCc5Baul68l87DmmSKby05Z+uHoEXVhn75wk8ms74wp2IpJzDmqEc7qGEGJYkmw46j/FgCOZVKXX61RFhxCum0kA+jXO0h09ypPgaM2Uuwn6nFuuhNE3gE1q2U1BXoZcazJlHIxIrvsgjCU/RxJmpEEtLw4jy/dNDV3o9PZ/SqOvQOoPUm7EqPdJui8Y9oiWBatnbpaBPPv08FzTMqyg9zfpNaeDR0lfz7SeKW4Ak/3gJtWLC57N7DLhY/oqF6YBkFTJN/b+prE7I=
+#   app: bookmanager4
+#   on: main
+#   run:
+#     - "rails db:migrate"
+#     - "rails db:seed"

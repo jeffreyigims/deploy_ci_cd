@@ -1,9 +1,3 @@
-* App runs differently acress browsers. Users will then need to have mutliple browsers installed to do the lab
-* GUI bugs 
-* Pull requests with Travis?
-* Use Docker image that we made in our previous lab for our build?
-
-
 ## Part 1: Setup 
 
 1. Create a [Heroku](https://www.heroku.com) if you don't have one already. 
@@ -31,7 +25,12 @@
 	```
 	language: ruby
 	rvm: 2.5.7
-	script:
+	services:
+	  - postgresql
+	before_script:
+	  - bundle exec rails db:create
+	  - bundle exec rails db:migrate
+	script: 
 	  - "bundle exec rails test test/controllers/authors_controller_test"
 	```
 	Note we are specifying a Ruby version for Travis to use during the build. The script argument specifies what commands Travis will execute when we push our changes to GitHub. We want Travis to execute our test suite when we push code changes.
@@ -80,7 +79,7 @@
 
 In the previous part of the lab, we were able to achieve apply testing and deployment to our continous integration strategy rather easily with Travis. Our current testing strategy involves a suite of unit tests to ensure our models and controllers work correctly. In this part of the lab we will see why this is not sufficient to ensure our app will function correctly and how we can use Selenium to create integration and end-to-end testing of our app as well. 
 
-1. Right now, we have Travis configured to run our unit test suite before deploying to ensure we are pushing quality code to production. So if our build passes, we know our app will work as epected right? Go to our deployed app on Heroku and add some books. 
+1. Right now, we have Travis configured to run our unit test suite before deploying to ensure we are pushing quality code to production. So if our build passes, we know our app will work as epected right? Go to our deployed app on Heroku and go to the books page. 
 
 2. Observe how the column for publishers does not display the name of the publisher but the unique identifier. This is not what we want but our unit tests did not catch this. 
 
