@@ -97,11 +97,13 @@ In the previous part of the lab, we were able to achieve apply testing and deplo
 	
 6. Read through the contents of the file to understand what is going on. We are creating an instance of a web driver and then simulating the process of how a user would create a new book. We then check that the user is redirected to the page for the newly created book and that the page displays the correct information. 
 
-7. Configure Travis to run our new tests. Push our changes to GitHub. Check the Travis dashboard for the repository and ensure the build failed. 
+7. Configure Travis to run our new tests by adjusting the scripts section. Push our changes to GitHub. Check GitHub or the Travis dashboard for the repository and ensure the build failed. 
 
-8. Go back to the repository and fix the view so that the assertion will now pass. You can run the tests locally by running `rails test test/selenium_tests`.
+8. Go back to the repository and fix the view so that the assertion will now pass. You can also run the tests locally by running `rails test test/selenium_tests`.
 
-7. Create two new tests similar to the test given that will test the process of a user creating a new author and a new publisher and assert all of the information is displayed correctly on the author and publisher pages after creating the new entities.  
+7. Create two new tests similar to the test given that will test the process of a user creating a new author and a new publisher and assert all of the information is displayed correctly on the author and publisher pages after creating the new entities. 
+
+8. 
 
 
 
