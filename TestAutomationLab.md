@@ -144,13 +144,13 @@ end
 	
 6. Read through the contents of the file to understand what is going on. We are creating an instance of a web driver and then simulating the process of how a user would create a new book. We then check that the user is redirected to the page for the newly created book and that the page displays the correct information. 
 
-7. Configure Travis to run our new tests by adjusting the scripts section. Push our changes to GitHub. Check GitHub or the Travis dashboard for the repository and ensure the build failed. 
+7. Configure Travis to run our new tests by adjusting the scripts section. Push our changes to GitHub and create a pull request. Check GitHub or the Travis dashboard for the repository and ensure the build failed. 
 
-8. Go back to the repository and fix the view so that the assertion will now pass. You can also run the tests locally by running `rails test test/selenium_tests`. Push the changes to GitHub, ensure the tests run successfully, and visit the app on Heroku to ensure our code changes took effect.
+8. Go back to the repository and fix the view so that the assertion will now pass. You can also run the tests locally by running `rails test test/selenium_tests`. Push the changes to GitHub and create a pull request, ensure the tests run successfully and then merge the changes, and visit the app on Heroku to ensure our code changes took effect.
 
 7. Create two new tests similar to the test given that will test the process of a user creating a new author and a new publisher and assert all of the information is displayed correctly on the author and publisher pages after creating the new entities. 
 
-8. Push the changes to GitHub, create and merge the changes into main, and visit the deployed app on Heroku.
+8. Push the changes to GitHub, create and merge the changes into main, and visit the deployed app on Heroku!
 
 
 
