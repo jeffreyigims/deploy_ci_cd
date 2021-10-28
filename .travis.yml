@@ -1,8 +1,13 @@
 language: ruby
+# addons:
+#   chrome: stable
 addons:
-  chrome: stable
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 before_install: 
-  - apt install chromium-chromedriver
   - bundle install
   - bundle exec rails server &
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
