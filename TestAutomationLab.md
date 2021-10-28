@@ -54,25 +54,26 @@
 
 7. We need to set up an app on Heroku to deploy to. Go to [Heroku](www.heroku.com) and create a new app. Give the app any valid name. Select GitHub as our deployment method and then link our repository to the new app by searching for it. Enable automatic deploys from the main branch and select the option to wait for continuous integration to pass before deploying.
 
-8. Go back to the command line at the root of our repository and run `heroku git:remote -a NAME_OF_APP_PLACEHOLDER` to create a remote reference to our repo. We can now deploy directly to our Heroku app if we want. 
+8. Go back to the command line at the root of our repository and run `heroku git:remote -a NAME_OF_APP_PLACEHOLDER` to create a remote reference to our repo. We can now deploy directly to our Heroku app if we want, but we will configure automatic deployments.
 
-
-
-Navigate back to your `.travis.yml` file and paste in the following contents:
-
-	```
-	deploy:
-	  provider: heroku
-	  api_key: 
-	    secure: "API_KEY_PLACEHOLDER"
-	  app: bookmanager_staging
-	```
+9. Navigate back to your `.travis.yml` file and paste in the following contents:
+	
+```
+deploy:
+  provider: heroku
+  api_key: 
+    secure: API_KEY_PLACEHOLDER
+  app: NAME_OF_APP_PLACEHOLDER
+  on: main
+ run:
+   - "rails db:migrate"
+   - "rails db:seed"
+```
+	
 
 7. Run `travis encrypt $(heroku auth:token) --add deploy.api_key --com` from the command line to fetch your encrypted Heroku API key and put it in our placeholder.
 
-8. Push our changes to GitHub. Verify that our build passes on [Travis](https://travis-ci.org), and then navigate to Heroku to see our app being deployed.
-
-9. The last Travis feature we want to demonstrate is its ability to interact with pull requests. We want to merge our code into main only when we are sure it functions the way we want it to. We can configure Travis to run when we create a pull request so we can be sure our code builds successfully before merging into main. Paste the following in your Travis file: 
+8. Push our changes to GitHub. Verify that our build passes on [Travis](https://travis-ci.org), and then navigate to Heroku to see our app being deployed. If the app deploys successfully, visit our deployed web application!
 
 ## Part 3: Selenium Introduction
 
