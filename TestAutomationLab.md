@@ -32,14 +32,19 @@
 	language: ruby
 	rvm: 2.5.7
 	script:
-	 — bundle install — jobs=3 — retry=3
-	 — bundle exec rake db:create
-	 — bundle exec rake db:migrate
-	 — bundle exec rspec
+	  - "bundle exec rails test/controllers/authors_controller_test"
 	```
 	Note we are specifying a Ruby version for Travis to use during the build. 	The script argument specifies what commands Travis will execute when we push 	our changes to GitHub. We want Travis to execute our test suite when we push 	code changes.
 	
 5. Let's push our changes to GitHub with the `.travis.yml` file now added. We can see the status of our build on GitHub and on Travis. On GitHub, navigate to our branch and click on the status symbol next to the unique commit identifier and then click details to view our Travis checks. We can also see the status from the [Travis](https://travis-ci.com) dashboard. Verify that the build successfully completes.
+
+6. We have configured travis to run our test suite when we push code changes. We can also configure travis to run when we make pull requests. Navigate back to the `.travis.yml` file and add in the following contents: 
+
+```
+
+```
+
+
 
 6. Now we have incorporated testing into our continous integration strategy but what about deployment? We can configure Travis to deploy our application on a successful build. Travis supports a plethora of deployment engines; We will use Heroku for our purposes. 
 
