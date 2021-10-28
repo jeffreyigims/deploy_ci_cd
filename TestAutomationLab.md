@@ -32,7 +32,7 @@
 	language: ruby
 	rvm: 2.5.7
 	script:
-	  - "bundle exec rails test/controllers/authors_controller_test"
+	  - "bundle exec rails test test/controllers/authors_controller_test"
 	```
 	Note we are specifying a Ruby version for Travis to use during the build. 	The script argument specifies what commands Travis will execute when we push 	our changes to GitHub. We want Travis to execute our test suite when we push 	code changes.
 	
@@ -40,16 +40,19 @@
 
 6. We have configured travis to run our test suite when we push code changes. We can also configure travis to run when we make pull requests. Navigate back to the `.travis.yml` file and add in the following contents: 
 
-```
-
-```
-
-
+   ```
+	branches:
+	  if: type = pull_request
+	  only: 
+	    - main
+	```
+	Note we are specifying Travis to build our app on pull requests into the 	main branch only.
+	
+10. Push the changes to GitHub, and open a pull request from our staging branch into main. You should see the Travis build start to run on the pull request page. When the apps builds successfully, Travis will notify you that the changes pass inspectionn can be merged into main. Merge the pull request.
 
 6. Now we have incorporated testing into our continous integration strategy but what about deployment? We can configure Travis to deploy our application on a successful build. Travis supports a plethora of deployment engines; We will use Heroku for our purposes. 
 
 7. We need to set up an app on Heroku to deploy to. Go to [Heroku](www.heroku.com) and create a new app. Give the app any valid name. Select GitHub as our deployment method and then link our repository to the new app by searching for it. Enable automatic deploys from the main branch and select the option to wait for continuous integration to pass before deploying.
-
 
 8. Go back to the command line at the root of our repository and run `heroku git:remote -a NAME_OF_APP_PLACEHOLDER` to create a remote reference to our repo. We can now deploy directly to our Heroku app if we want. 
 
@@ -70,16 +73,6 @@ Navigate back to your `.travis.yml` file and paste in the following contents:
 8. Push our changes to GitHub. Verify that our build passes on [Travis](https://travis-ci.org), and then navigate to Heroku to see our app being deployed.
 
 9. The last Travis feature we want to demonstrate is its ability to interact with pull requests. We want to merge our code into main only when we are sure it functions the way we want it to. We can configure Travis to run when we create a pull request so we can be sure our code builds successfully before merging into main. Paste the following in your Travis file: 
-
-	```
-	branches:
-	  if: type = pull_request
-	  only: 
-	    - main
-	```
-	Note we are specifying Travis to build our app on pull requests into the 	main branch only.
-	
-10. Push the changes to GitHub, and open a pull request from our staging branch into main. You should see the Travis build start to run on the pull request page. When the apps builds successfylly, Travis will notify you that changes pass inspectionn can be merged into main. Merge the pull request.
 
 ## Part 3: Selenium Introduction
 

@@ -9,6 +9,8 @@ language: ruby
 #   server"
 ##########
 rvm: 2.7.4
+services:
+  - postgresql
 script: 
   - "bundle exec rails test test/controllers/authors_controller_test"
 deploy:
