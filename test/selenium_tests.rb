@@ -4,7 +4,6 @@ require 'test_helper'
 class SeleniumTests < ActiveSupport::TestCase
 
     setup do 
-        # create_all
         options = Selenium::WebDriver::Chrome::Options.new
         options.add_argument('--headless')
         @@driver = Selenium::WebDriver.for :chrome, options: options 

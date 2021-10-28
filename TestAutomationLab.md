@@ -1,6 +1,6 @@
 ## Part 1: Setup 
 
-1. Create a [Heroku](https://www.heroku.com) if you don't have one already. 
+1. Create a [Heroku](https://www.heroku.com) account if you don't have one already. 
 
 2. Install the [Heroku](https://devcenter.heroku.com/articles/heroku-cli) and [Travis](https://github.com/travis-ci/travis.rb#readme) command line clients. 
 
@@ -89,11 +89,58 @@ In the previous part of the lab, we were able to achieve apply testing and deplo
 
 5. Create a file called `selenium_tests.rb` in the test directory of your app and paste in the following contents: 
 
-	```
-   class SeleniumTests < ActiveSupport::TestCase
-   end 
+```
+class SeleniumTests < ActiveSupport::TestCase
 
-	```
+	setup do 
+    	options = Selenium::WebDriver::Chrome::Options.new
+    	options.add_argument('--headless')
+    	@@driver = Selenium::WebDriver.for :chrome, options: options 
+	end 
+
+	test "test creating a book" do 
+    	# navigate to the specific page we want 
+    	@@driver.get "http://localhost:3000/books/new"
+
+    	# set a timeout to wait for the elements to appear on our page 
+    	wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+    	wait.until { @@driver.find_element(:id => "book_title") }
+
+	    # fill out the form to create a book by sending input from the driver 
+	    @@driver.find_element(:id, 'book_title').send_keys 'A Storm of Swords'
+	    @@driver.find_element(:id, 'book_publisher_id').send_keys '1'
+	
+	    # some date data 
+	    day = Date.current.day 
+	    month = Date.current.month
+	    @@driver.find_element(:id, 'book_proposal_date_1i').send_keys (Date.current - 3.years)
+	    @@driver.find_element(:id, 'book_proposal_date_2i').send_keys month
+	    @@driver.find_element(:id, 'book_proposal_date_3i').send_keys day
+	
+	    @@driver.find_element(:id, 'book_contract_date_1i').send_keys (Date.current - 2.years)
+	    @@driver.find_element(:id, 'book_contract_date_2i').send_keys month
+	    @@driver.find_element(:id, 'book_contract_date_3i').send_keys day
+	
+	    @@driver.find_element(:id, 'book_published_date_1i').send_keys (Date.current - 1.year)
+	    @@driver.find_element(:id, 'book_published_date_2i').send_keys month
+	    @@driver.find_element(:id, 'book_published_date_3i').send_keys day
+	
+	    @@driver.find_element(:id, 'book_units_sold').send_keys '4000'
+	
+	    # submit form, we should then be redirected to the page for the book we just created 
+	    @@driver.find_element(:name, 'commit').click
+	
+	    # assert that all of the information we just enterred is displayed somewhere on the page
+	    assert @@driver.find_element(:tag_name, "body").text.include?("A Storm of Swords"), "Title should be present"
+	    assert @@driver.find_element(:tag_name, "body").text.include?("Bantam Spectra"), "Publisher should be present"
+	    assert @@driver.find_element(:tag_name, "body").text.include?((Date.current - 1.year).to_s), "Published date should be present"
+	    assert @@driver.find_element(:tag_name, "body").text.include?((Date.current - 2.year).to_s), "Contract date should be present"
+	    assert @@driver.find_element(:tag_name, "body").text.include?((Date.current - 3.year).to_s), "Proposal date should be present"
+	    assert @@driver.find_element(:tag_name, "body").text.include?("4000"), "Units sold should be present"
+	end 
+	
+end 	
+```
 	
 6. Read through the contents of the file to understand what is going on. We are creating an instance of a web driver and then simulating the process of how a user would create a new book. We then check that the user is redirected to the page for the newly created book and that the page displays the correct information. 
 
