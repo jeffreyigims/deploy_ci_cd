@@ -19,7 +19,7 @@ before_script:
   - bundle exec rails db:migrate
 script: 
   - "bundle exec rails test test/controllers/authors_controller_test"
-  - "bundle exec rails test test/selenium_tests"
+  # - "bundle exec rails test test/selenium_tests"
 deploy:
   provider: heroku 
   api_key:
