@@ -8841,3 +8841,179 @@ Redirected to http://www.example.com/authors
 Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.7ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "George"], ["last_name", "R. R. Martin"], ["created_at", "2021-10-28 01:36:40.161021"], ["updated_at", "2021-10-28 01:36:40.161021"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "C.S."], ["last_name", "Lewis"], ["created_at", "2021-10-28 01:36:40.165700"], ["updated_at", "2021-10-28 01:36:40.165700"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Terry"], ["last_name", "Pratchett"], ["created_at", "2021-10-28 01:36:40.167896"], ["updated_at", "2021-10-28 01:36:40.167896"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Stephen"], ["last_name", "King"], ["created_at", "2021-10-28 01:36:40.169653"], ["updated_at", "2021-10-28 01:36:40.169653"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Peter"], ["last_name", "Straub"], ["created_at", "2021-10-28 01:36:40.171462"], ["updated_at", "2021-10-28 01:36:40.171462"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Neil"], ["last_name", "Gaiman"], ["created_at", "2021-10-28 01:36:40.172948"], ["updated_at", "2021-10-28 01:36:40.172948"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.6ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bantam Spectra"], ["created_at", "2021-10-28 01:36:40.185452"], ["updated_at", "2021-10-28 01:36:40.185452"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.4ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "HarperCollins"], ["created_at", "2021-10-28 01:36:40.187916"], ["updated_at", "2021-10-28 01:36:40.187916"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.3ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Viking"], ["created_at", "2021-10-28 01:36:40.189904"], ["updated_at", "2021-10-28 01:36:40.189904"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.2ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Workman"], ["created_at", "2021-10-28 01:36:40.191482"], ["updated_at", "2021-10-28 01:36:40.191482"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Talisman"], ["publisher_id", 980190965], ["proposal_date", "1984-04-10"], ["contract_date", "1984-05-10"], ["published_date", "1984-11-08"], ["units_sold", 25000], ["created_at", "2021-10-28 01:36:40.235061"], ["updated_at", "2021-10-28 01:36:40.235061"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Game of Thrones"], ["publisher_id", 980190963], ["proposal_date", "1996-03-01"], ["contract_date", "1996-05-01"], ["published_date", "1996-08-01"], ["units_sold", 20000], ["created_at", "2021-10-28 01:36:40.238720"], ["updated_at", "2021-10-28 01:36:40.238720"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Chronicles of Narnia"], ["publisher_id", 980190964], ["proposal_date", "1950-03-10"], ["contract_date", "1950-04-10"], ["published_date", "1950-05-10"], ["units_sold", 15000], ["created_at", "2021-10-28 01:36:40.241591"], ["updated_at", "2021-10-28 01:36:40.241591"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Good Omens"], ["publisher_id", 980190966], ["proposal_date", "1990-03-10"], ["contract_date", "1990-04-10"], ["published_date", "1990-05-10"], ["units_sold", 5000], ["created_at", "2021-10-28 01:36:40.244164"], ["updated_at", "2021-10-28 01:36:40.244164"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190965], ["author_id", 980190964], ["created_at", "2021-10-28 01:36:40.259070"], ["updated_at", "2021-10-28 01:36:40.259070"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190966], ["author_id", 980190965], ["created_at", "2021-10-28 01:36:40.262670"], ["updated_at", "2021-10-28 01:36:40.262670"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190966], ["created_at", "2021-10-28 01:36:40.264975"], ["updated_at", "2021-10-28 01:36:40.264975"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190969], ["created_at", "2021-10-28 01:36:40.267190"], ["updated_at", "2021-10-28 01:36:40.267190"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190967], ["created_at", "2021-10-28 01:36:40.269228"], ["updated_at", "2021-10-28 01:36:40.269228"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190968], ["created_at", "2021-10-28 01:36:40.271247"], ["updated_at", "2021-10-28 01:36:40.271247"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "authors" DISABLE TRIGGER ALL;ALTER TABLE "book_authors" DISABLE TRIGGER ALL;ALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "publishers" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.1ms)[0m  [1m[31mDELETE FROM "book_authors";
+DELETE FROM "authors";
+DELETE FROM "books";
+DELETE FROM "publishers";
+INSERT INTO "book_authors" ("id", "book_id", "author_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2021-10-28 01:36:40.307633', '2021-10-28 01:36:40.307633'), (298486374, 1, 1, '2021-10-28 01:36:40.307633', '2021-10-28 01:36:40.307633');
+INSERT INTO "authors" ("id", "first_name", "last_name", "created_at", "updated_at") VALUES (980190962, 'MyString', NULL, '2021-10-28 01:36:40.309648', '2021-10-28 01:36:40.309648'), (298486374, 'MyString', NULL, '2021-10-28 01:36:40.309648', '2021-10-28 01:36:40.309648');
+INSERT INTO "books" ("id", "title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 01:36:40.311538', '2021-10-28 01:36:40.311538'), (298486374, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 01:36:40.311538', '2021-10-28 01:36:40.311538');
+INSERT INTO "publishers" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2021-10-28 01:36:40.314412', '2021-10-28 01:36:40.314412'), (298486374, 'MyString', '2021-10-28 01:36:40.314412', '2021-10-28 01:36:40.314412')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "authors" ENABLE TRIGGER ALL;ALTER TABLE "book_authors" ENABLE TRIGGER ALL;ALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "publishers" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+AuthorsControllerTest: test_should_destroy_author
+-------------------------------------------------
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+Started DELETE "/authors/980190962" for 127.0.0.1 at 2021-10-27 21:36:40 -0400
+Processing by AuthorsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAuthor Destroy (0.3ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/authors
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+AuthorsControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/authors" for 127.0.0.1 at 2021-10-27 21:36:40 -0400
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 153ms (Views: 148.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+AuthorsControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mAuthor Load (1.0ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/authors/new" for 127.0.0.1 at 2021-10-27 21:36:40 -0400
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (19.3ms)
+  Rendered authors/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+AuthorsControllerTest: test_should_show_author
+----------------------------------------------
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/authors/980190962" for 127.0.0.1 at 2021-10-27 21:36:40 -0400
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAuthor Load (2.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 22.1ms | ActiveRecord: 2.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+AuthorsControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/authors/980190962/edit" for 127.0.0.1 at 2021-10-27 21:36:40 -0400
+Processing by AuthorsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering authors/edit.html.erb within layouts/application
+  Rendered authors/_form.html.erb (2.2ms)
+  Rendered authors/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+AuthorsControllerTest: test_should_create_author
+------------------------------------------------
+  [1m[36mAuthor Load (17.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (15.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+Started POST "/authors" for 127.0.0.1 at 2021-10-27 21:36:40 -0400
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"first_name"=>"MyString", "last_name"=>nil}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["first_name", "MyString"], ["created_at", "2021-10-28 01:36:40.975892"], ["updated_at", "2021-10-28 01:36:40.975892"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/authors/980190963
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY "authors"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+AuthorsControllerTest: test_should_update_author
+------------------------------------------------
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/authors/980190962" for 127.0.0.1 at 2021-10-27 21:36:40 -0400
+Processing by AuthorsController#update as HTML
+  Parameters: {"author"=>{"first_name"=>"MyString", "last_name"=>nil}, "id"=>"980190962"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/authors/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

@@ -37,7 +37,7 @@
 	 — bundle exec rake db:migrate
 	 — bundle exec rspec
 	```
-	Note we are specifying a Ruby version for Travis to use during the build. 	The script argument specifies what commands Travis will execute when we push 	our changes to GitHub.
+	Note we are specifying a Ruby version for Travis to use during the build. 	The script argument specifies what commands Travis will execute when we push 	our changes to GitHub. We want Travis to execute our test suite when we push 	code changes.
 	
 5. Let's push our changes to GitHub with the `.travis.yml` file now added. We can see the status of our build on GitHub and on Travis. On GitHub, navigate to our branch and click on the status symbol next to the unique commit identifier and then click details to view our Travis checks. We can also see the status from the [Travis](https://travis-ci.com) dashboard. Verify that the build successfully completes.
 

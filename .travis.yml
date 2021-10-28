@@ -10,7 +10,7 @@ language: ruby
 ##########
 rvm: 2.7.4
 script: 
-  - "rails test/controllers/authors_controller_test"
+  - "bundle exec rails test/controllers/authors_controller_test"
 deploy:
   provider: heroku 
   api_key:
