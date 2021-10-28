@@ -7014,3 +7014,86 @@ Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.2ms)
   [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "bookmanager_test" ENCODING = 'utf8'[0m
   [1m[35m (2.3ms)[0m  [1m[35mCREATE DATABASE "bookmanager_development" ENCODING = 'utf8'[0m
   [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE "bookmanager_test" ENCODING = 'utf8'[0m
+Started GET "/books/new" for ::1 at 2021-10-27 22:43:12 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (35.2ms)
+  Rendered books/new.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 310ms (Views: 277.2ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/books" for ::1 at 2021-10-27 22:43:14 -0400
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q/Vpf5HbJzxiZEk0y74a9StNZ5cFUwWwH743Zw1LeRH5hJ9bO+CblxvUV0bJKewFu4BlHIzaSY8FlS4JfNUrxg==", "book"=>{"title"=>"A Storm of Swords", "publisher_id"=>"1", "proposal_date(1i)"=>"2018", "proposal_date(2i)"=>"10", "proposal_date(3i)"=>"28", "contract_date(1i)"=>"2019", "contract_date(2i)"=>"10", "contract_date(3i)"=>"28", "published_date(1i)"=>"2020", "published_date(2i)"=>"10", "published_date(3i)"=>"28", "units_sold"=>"4000"}, "commit"=>"Create Book"}
+  [1m[36mPublisher Load (0.9ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "A Storm of Swords"], ["publisher_id", 1], ["proposal_date", "2018-10-28"], ["contract_date", "2019-10-28"], ["published_date", "2020-10-28"], ["units_sold", 4000], ["created_at", "2021-10-28 02:43:14.290454"], ["updated_at", "2021-10-28 02:43:14.290454"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/5
+Completed 302 Found in 47ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/books/5" for ::1 at 2021-10-27 22:43:14 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 19.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/publishers/new" for ::1 at 2021-10-27 22:43:15 -0400
+Processing by PublishersController#new as HTML
+  Rendering publishers/new.html.erb within layouts/application
+  Rendered publishers/_form.html.erb (1.5ms)
+  Rendered publishers/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/publishers" for ::1 at 2021-10-27 22:43:15 -0400
+Processing by PublishersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fw5/8XiGgcy2A0YR5E8cht2zNZfVvj/rYFDwtom0VvhKZPZcYKFA8ENI/zjPFNVi+4pM6iuNNZvDswtLu9dbzA==", "publisher"=>{"name"=>"Macmillan"}, "commit"=>"Create Publisher"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (1.0ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Macmillan"], ["created_at", "2021-10-28 02:43:15.743413"], ["updated_at", "2021-10-28 02:43:15.743413"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/publishers/5
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/publishers/5" for ::1 at 2021-10-27 22:43:15 -0400
+Processing by PublishersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPublisher Load (0.6ms)[0m  [1m[34mSELECT  "publishers".* FROM "publishers" WHERE "publishers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering publishers/show.html.erb within layouts/application
+  Rendered publishers/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/authors/new" for ::1 at 2021-10-27 22:43:16 -0400
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (2.1ms)
+  Rendered authors/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 84ms (Views: 32.9ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/authors" for ::1 at 2021-10-27 22:43:17 -0400
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ta/TccuqCnBBOGlBCGV3JVavnlVhmGwemIANZcNt9PYGDqBK2VrCZ7+m++dLsOT6LLTReetq8mhTzTRUOsfwmA==", "author"=>{"first_name"=>"J.K.", "last_name"=>"Rowling"}, "commit"=>"Create Author"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (2.0ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "J.K."], ["last_name", "Rowling"], ["created_at", "2021-10-28 02:43:17.510422"], ["updated_at", "2021-10-28 02:43:17.510422"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/authors/7
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/authors/7" for ::1 at 2021-10-27 22:43:17 -0400
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 22.3ms | ActiveRecord: 0.6ms)
+
+

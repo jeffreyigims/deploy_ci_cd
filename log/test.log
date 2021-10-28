@@ -9285,3 +9285,371 @@ SeleniumTests: test_test_creating_a_book
 SeleniumTests: test_test_creating_a_publisher
 ---------------------------------------------
   [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "George"], ["last_name", "R. R. Martin"], ["created_at", "2021-10-28 02:42:25.708974"], ["updated_at", "2021-10-28 02:42:25.708974"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "C.S."], ["last_name", "Lewis"], ["created_at", "2021-10-28 02:42:25.719366"], ["updated_at", "2021-10-28 02:42:25.719366"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Terry"], ["last_name", "Pratchett"], ["created_at", "2021-10-28 02:42:25.721644"], ["updated_at", "2021-10-28 02:42:25.721644"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Stephen"], ["last_name", "King"], ["created_at", "2021-10-28 02:42:25.723344"], ["updated_at", "2021-10-28 02:42:25.723344"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.2ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Peter"], ["last_name", "Straub"], ["created_at", "2021-10-28 02:42:25.725072"], ["updated_at", "2021-10-28 02:42:25.725072"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.9ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Neil"], ["last_name", "Gaiman"], ["created_at", "2021-10-28 02:42:25.726799"], ["updated_at", "2021-10-28 02:42:25.726799"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.6ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bantam Spectra"], ["created_at", "2021-10-28 02:42:25.739894"], ["updated_at", "2021-10-28 02:42:25.739894"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.2ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "HarperCollins"], ["created_at", "2021-10-28 02:42:25.742360"], ["updated_at", "2021-10-28 02:42:25.742360"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.2ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Viking"], ["created_at", "2021-10-28 02:42:25.743878"], ["updated_at", "2021-10-28 02:42:25.743878"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.2ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Workman"], ["created_at", "2021-10-28 02:42:25.745363"], ["updated_at", "2021-10-28 02:42:25.745363"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Talisman"], ["publisher_id", 980190965], ["proposal_date", "1984-04-10"], ["contract_date", "1984-05-10"], ["published_date", "1984-11-08"], ["units_sold", 25000], ["created_at", "2021-10-28 02:42:25.778194"], ["updated_at", "2021-10-28 02:42:25.778194"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Game of Thrones"], ["publisher_id", 980190963], ["proposal_date", "1996-03-01"], ["contract_date", "1996-05-01"], ["published_date", "1996-08-01"], ["units_sold", 20000], ["created_at", "2021-10-28 02:42:25.781981"], ["updated_at", "2021-10-28 02:42:25.781981"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Chronicles of Narnia"], ["publisher_id", 980190964], ["proposal_date", "1950-03-10"], ["contract_date", "1950-04-10"], ["published_date", "1950-05-10"], ["units_sold", 15000], ["created_at", "2021-10-28 02:42:25.785042"], ["updated_at", "2021-10-28 02:42:25.785042"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Good Omens"], ["publisher_id", 980190966], ["proposal_date", "1990-03-10"], ["contract_date", "1990-04-10"], ["published_date", "1990-05-10"], ["units_sold", 5000], ["created_at", "2021-10-28 02:42:25.788074"], ["updated_at", "2021-10-28 02:42:25.788074"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190965], ["author_id", 980190963], ["created_at", "2021-10-28 02:42:25.802755"], ["updated_at", "2021-10-28 02:42:25.802755"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.8ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190966], ["author_id", 980190964], ["created_at", "2021-10-28 02:42:25.805984"], ["updated_at", "2021-10-28 02:42:25.805984"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190965], ["created_at", "2021-10-28 02:42:25.810260"], ["updated_at", "2021-10-28 02:42:25.810260"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190968], ["created_at", "2021-10-28 02:42:25.812760"], ["updated_at", "2021-10-28 02:42:25.812760"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190966], ["created_at", "2021-10-28 02:42:25.815202"], ["updated_at", "2021-10-28 02:42:25.815202"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190967], ["created_at", "2021-10-28 02:42:25.818283"], ["updated_at", "2021-10-28 02:42:25.818283"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "authors" DISABLE TRIGGER ALL;ALTER TABLE "book_authors" DISABLE TRIGGER ALL;ALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "publishers" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.2ms)[0m  [1m[31mDELETE FROM "book_authors";
+DELETE FROM "authors";
+DELETE FROM "books";
+DELETE FROM "publishers";
+INSERT INTO "book_authors" ("id", "book_id", "author_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2021-10-28 02:42:25.866640', '2021-10-28 02:42:25.866640'), (298486374, 1, 1, '2021-10-28 02:42:25.866640', '2021-10-28 02:42:25.866640');
+INSERT INTO "authors" ("id", "first_name", "last_name", "created_at", "updated_at") VALUES (980190962, 'MyString', NULL, '2021-10-28 02:42:25.868955', '2021-10-28 02:42:25.868955'), (298486374, 'MyString', NULL, '2021-10-28 02:42:25.868955', '2021-10-28 02:42:25.868955');
+INSERT INTO "books" ("id", "title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 02:42:25.871729', '2021-10-28 02:42:25.871729'), (298486374, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 02:42:25.871729', '2021-10-28 02:42:25.871729');
+INSERT INTO "publishers" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2021-10-28 02:42:25.875161', '2021-10-28 02:42:25.875161'), (298486374, 'MyString', '2021-10-28 02:42:25.875161', '2021-10-28 02:42:25.875161')[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "authors" ENABLE TRIGGER ALL;ALTER TABLE "book_authors" ENABLE TRIGGER ALL;ALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "publishers" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SeleniumTests: test_test_creating_an_author
+-------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+SeleniumTests: test_test_creating_a_book
+----------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+SeleniumTests: test_test_creating_a_publisher
+---------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "George"], ["last_name", "R. R. Martin"], ["created_at", "2021-10-28 02:42:37.698861"], ["updated_at", "2021-10-28 02:42:37.698861"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.8ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "C.S."], ["last_name", "Lewis"], ["created_at", "2021-10-28 02:42:37.703616"], ["updated_at", "2021-10-28 02:42:37.703616"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Terry"], ["last_name", "Pratchett"], ["created_at", "2021-10-28 02:42:37.707943"], ["updated_at", "2021-10-28 02:42:37.707943"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Stephen"], ["last_name", "King"], ["created_at", "2021-10-28 02:42:37.710410"], ["updated_at", "2021-10-28 02:42:37.710410"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Peter"], ["last_name", "Straub"], ["created_at", "2021-10-28 02:42:37.712756"], ["updated_at", "2021-10-28 02:42:37.712756"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Neil"], ["last_name", "Gaiman"], ["created_at", "2021-10-28 02:42:37.714937"], ["updated_at", "2021-10-28 02:42:37.714937"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.5ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bantam Spectra"], ["created_at", "2021-10-28 02:42:37.730336"], ["updated_at", "2021-10-28 02:42:37.730336"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.3ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "HarperCollins"], ["created_at", "2021-10-28 02:42:37.732903"], ["updated_at", "2021-10-28 02:42:37.732903"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.2ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Viking"], ["created_at", "2021-10-28 02:42:37.734969"], ["updated_at", "2021-10-28 02:42:37.734969"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.3ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Workman"], ["created_at", "2021-10-28 02:42:37.736594"], ["updated_at", "2021-10-28 02:42:37.736594"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Talisman"], ["publisher_id", 980190965], ["proposal_date", "1984-04-10"], ["contract_date", "1984-05-10"], ["published_date", "1984-11-08"], ["units_sold", 25000], ["created_at", "2021-10-28 02:42:37.768344"], ["updated_at", "2021-10-28 02:42:37.768344"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Game of Thrones"], ["publisher_id", 980190963], ["proposal_date", "1996-03-01"], ["contract_date", "1996-05-01"], ["published_date", "1996-08-01"], ["units_sold", 20000], ["created_at", "2021-10-28 02:42:37.771927"], ["updated_at", "2021-10-28 02:42:37.771927"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Chronicles of Narnia"], ["publisher_id", 980190964], ["proposal_date", "1950-03-10"], ["contract_date", "1950-04-10"], ["published_date", "1950-05-10"], ["units_sold", 15000], ["created_at", "2021-10-28 02:42:37.774789"], ["updated_at", "2021-10-28 02:42:37.774789"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Good Omens"], ["publisher_id", 980190966], ["proposal_date", "1990-03-10"], ["contract_date", "1990-04-10"], ["published_date", "1990-05-10"], ["units_sold", 5000], ["created_at", "2021-10-28 02:42:37.778353"], ["updated_at", "2021-10-28 02:42:37.778353"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (1.0ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190965], ["author_id", 980190963], ["created_at", "2021-10-28 02:42:37.795299"], ["updated_at", "2021-10-28 02:42:37.795299"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190966], ["author_id", 980190964], ["created_at", "2021-10-28 02:42:37.800000"], ["updated_at", "2021-10-28 02:42:37.800000"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190965], ["created_at", "2021-10-28 02:42:37.802421"], ["updated_at", "2021-10-28 02:42:37.802421"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190968], ["created_at", "2021-10-28 02:42:37.806014"], ["updated_at", "2021-10-28 02:42:37.806014"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190966], ["created_at", "2021-10-28 02:42:37.808258"], ["updated_at", "2021-10-28 02:42:37.808258"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.9ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190967], ["created_at", "2021-10-28 02:42:37.810647"], ["updated_at", "2021-10-28 02:42:37.810647"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "authors" DISABLE TRIGGER ALL;ALTER TABLE "book_authors" DISABLE TRIGGER ALL;ALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "publishers" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.9ms)[0m  [1m[31mDELETE FROM "book_authors";
+DELETE FROM "authors";
+DELETE FROM "books";
+DELETE FROM "publishers";
+INSERT INTO "book_authors" ("id", "book_id", "author_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2021-10-28 02:42:37.852002', '2021-10-28 02:42:37.852002'), (298486374, 1, 1, '2021-10-28 02:42:37.852002', '2021-10-28 02:42:37.852002');
+INSERT INTO "authors" ("id", "first_name", "last_name", "created_at", "updated_at") VALUES (980190962, 'MyString', NULL, '2021-10-28 02:42:37.854430', '2021-10-28 02:42:37.854430'), (298486374, 'MyString', NULL, '2021-10-28 02:42:37.854430', '2021-10-28 02:42:37.854430');
+INSERT INTO "books" ("id", "title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 02:42:37.856546', '2021-10-28 02:42:37.856546'), (298486374, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 02:42:37.856546', '2021-10-28 02:42:37.856546');
+INSERT INTO "publishers" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2021-10-28 02:42:37.859674', '2021-10-28 02:42:37.859674'), (298486374, 'MyString', '2021-10-28 02:42:37.859674', '2021-10-28 02:42:37.859674')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "authors" ENABLE TRIGGER ALL;ALTER TABLE "book_authors" ENABLE TRIGGER ALL;ALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "publishers" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+SeleniumTests: test_test_creating_a_publisher
+---------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+SeleniumTests: test_test_creating_a_book
+----------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SeleniumTests: test_test_creating_an_author
+-------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.7ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "George"], ["last_name", "R. R. Martin"], ["created_at", "2021-10-28 02:42:55.670667"], ["updated_at", "2021-10-28 02:42:55.670667"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "C.S."], ["last_name", "Lewis"], ["created_at", "2021-10-28 02:42:55.674163"], ["updated_at", "2021-10-28 02:42:55.674163"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Terry"], ["last_name", "Pratchett"], ["created_at", "2021-10-28 02:42:55.676212"], ["updated_at", "2021-10-28 02:42:55.676212"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Stephen"], ["last_name", "King"], ["created_at", "2021-10-28 02:42:55.678130"], ["updated_at", "2021-10-28 02:42:55.678130"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Peter"], ["last_name", "Straub"], ["created_at", "2021-10-28 02:42:55.681965"], ["updated_at", "2021-10-28 02:42:55.681965"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Neil"], ["last_name", "Gaiman"], ["created_at", "2021-10-28 02:42:55.684796"], ["updated_at", "2021-10-28 02:42:55.684796"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.7ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bantam Spectra"], ["created_at", "2021-10-28 02:42:55.699556"], ["updated_at", "2021-10-28 02:42:55.699556"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.5ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "HarperCollins"], ["created_at", "2021-10-28 02:42:55.702374"], ["updated_at", "2021-10-28 02:42:55.702374"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.4ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Viking"], ["created_at", "2021-10-28 02:42:55.704956"], ["updated_at", "2021-10-28 02:42:55.704956"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.3ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Workman"], ["created_at", "2021-10-28 02:42:55.706899"], ["updated_at", "2021-10-28 02:42:55.706899"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Talisman"], ["publisher_id", 980190965], ["proposal_date", "1984-04-10"], ["contract_date", "1984-05-10"], ["published_date", "1984-11-08"], ["units_sold", 25000], ["created_at", "2021-10-28 02:42:55.745569"], ["updated_at", "2021-10-28 02:42:55.745569"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Game of Thrones"], ["publisher_id", 980190963], ["proposal_date", "1996-03-01"], ["contract_date", "1996-05-01"], ["published_date", "1996-08-01"], ["units_sold", 20000], ["created_at", "2021-10-28 02:42:55.751142"], ["updated_at", "2021-10-28 02:42:55.751142"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Chronicles of Narnia"], ["publisher_id", 980190964], ["proposal_date", "1950-03-10"], ["contract_date", "1950-04-10"], ["published_date", "1950-05-10"], ["units_sold", 15000], ["created_at", "2021-10-28 02:42:55.754497"], ["updated_at", "2021-10-28 02:42:55.754497"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Good Omens"], ["publisher_id", 980190966], ["proposal_date", "1990-03-10"], ["contract_date", "1990-04-10"], ["published_date", "1990-05-10"], ["units_sold", 5000], ["created_at", "2021-10-28 02:42:55.758047"], ["updated_at", "2021-10-28 02:42:55.758047"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190965], ["author_id", 980190963], ["created_at", "2021-10-28 02:42:55.778553"], ["updated_at", "2021-10-28 02:42:55.778553"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (1.2ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190966], ["author_id", 980190964], ["created_at", "2021-10-28 02:42:55.781685"], ["updated_at", "2021-10-28 02:42:55.781685"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190965], ["created_at", "2021-10-28 02:42:55.787222"], ["updated_at", "2021-10-28 02:42:55.787222"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190968], ["created_at", "2021-10-28 02:42:55.790036"], ["updated_at", "2021-10-28 02:42:55.790036"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190966], ["created_at", "2021-10-28 02:42:55.792252"], ["updated_at", "2021-10-28 02:42:55.792252"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190967], ["created_at", "2021-10-28 02:42:55.794301"], ["updated_at", "2021-10-28 02:42:55.794301"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "authors" DISABLE TRIGGER ALL;ALTER TABLE "book_authors" DISABLE TRIGGER ALL;ALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "publishers" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.3ms)[0m  [1m[31mDELETE FROM "book_authors";
+DELETE FROM "authors";
+DELETE FROM "books";
+DELETE FROM "publishers";
+INSERT INTO "book_authors" ("id", "book_id", "author_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2021-10-28 02:42:55.841959', '2021-10-28 02:42:55.841959'), (298486374, 1, 1, '2021-10-28 02:42:55.841959', '2021-10-28 02:42:55.841959');
+INSERT INTO "authors" ("id", "first_name", "last_name", "created_at", "updated_at") VALUES (980190962, 'MyString', NULL, '2021-10-28 02:42:55.844225', '2021-10-28 02:42:55.844225'), (298486374, 'MyString', NULL, '2021-10-28 02:42:55.844225', '2021-10-28 02:42:55.844225');
+INSERT INTO "books" ("id", "title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 02:42:55.846268', '2021-10-28 02:42:55.846268'), (298486374, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 02:42:55.846268', '2021-10-28 02:42:55.846268');
+INSERT INTO "publishers" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2021-10-28 02:42:55.850357', '2021-10-28 02:42:55.850357'), (298486374, 'MyString', '2021-10-28 02:42:55.850357', '2021-10-28 02:42:55.850357')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "authors" ENABLE TRIGGER ALL;ALTER TABLE "book_authors" ENABLE TRIGGER ALL;ALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "publishers" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+SeleniumTests: test_test_creating_a_book
+----------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+SeleniumTests: test_test_creating_a_publisher
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SeleniumTests: test_test_creating_an_author
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "George"], ["last_name", "R. R. Martin"], ["created_at", "2021-10-28 02:43:10.798618"], ["updated_at", "2021-10-28 02:43:10.798618"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "C.S."], ["last_name", "Lewis"], ["created_at", "2021-10-28 02:43:10.802551"], ["updated_at", "2021-10-28 02:43:10.802551"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Terry"], ["last_name", "Pratchett"], ["created_at", "2021-10-28 02:43:10.804797"], ["updated_at", "2021-10-28 02:43:10.804797"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Stephen"], ["last_name", "King"], ["created_at", "2021-10-28 02:43:10.806564"], ["updated_at", "2021-10-28 02:43:10.806564"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Peter"], ["last_name", "Straub"], ["created_at", "2021-10-28 02:43:10.808243"], ["updated_at", "2021-10-28 02:43:10.808243"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Neil"], ["last_name", "Gaiman"], ["created_at", "2021-10-28 02:43:10.810070"], ["updated_at", "2021-10-28 02:43:10.810070"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.7ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Bantam Spectra"], ["created_at", "2021-10-28 02:43:10.822365"], ["updated_at", "2021-10-28 02:43:10.822365"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.3ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "HarperCollins"], ["created_at", "2021-10-28 02:43:10.825399"], ["updated_at", "2021-10-28 02:43:10.825399"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.3ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Viking"], ["created_at", "2021-10-28 02:43:10.827595"], ["updated_at", "2021-10-28 02:43:10.827595"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPublisher Create (0.4ms)[0m  [1m[32mINSERT INTO "publishers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Workman"], ["created_at", "2021-10-28 02:43:10.833507"], ["updated_at", "2021-10-28 02:43:10.833507"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Talisman"], ["publisher_id", 980190965], ["proposal_date", "1984-04-10"], ["contract_date", "1984-05-10"], ["published_date", "1984-11-08"], ["units_sold", 25000], ["created_at", "2021-10-28 02:43:10.865382"], ["updated_at", "2021-10-28 02:43:10.865382"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Game of Thrones"], ["publisher_id", 980190963], ["proposal_date", "1996-03-01"], ["contract_date", "1996-05-01"], ["published_date", "1996-08-01"], ["units_sold", 20000], ["created_at", "2021-10-28 02:43:10.869356"], ["updated_at", "2021-10-28 02:43:10.869356"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Chronicles of Narnia"], ["publisher_id", 980190964], ["proposal_date", "1950-03-10"], ["contract_date", "1950-04-10"], ["published_date", "1950-05-10"], ["units_sold", 15000], ["created_at", "2021-10-28 02:43:10.872679"], ["updated_at", "2021-10-28 02:43:10.872679"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Good Omens"], ["publisher_id", 980190966], ["proposal_date", "1990-03-10"], ["contract_date", "1990-04-10"], ["published_date", "1990-05-10"], ["units_sold", 5000], ["created_at", "2021-10-28 02:43:10.877195"], ["updated_at", "2021-10-28 02:43:10.877195"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.6ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190965], ["author_id", 980190963], ["created_at", "2021-10-28 02:43:10.895045"], ["updated_at", "2021-10-28 02:43:10.895045"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190966], ["author_id", 980190964], ["created_at", "2021-10-28 02:43:10.897751"], ["updated_at", "2021-10-28 02:43:10.897751"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190965], ["created_at", "2021-10-28 02:43:10.900257"], ["updated_at", "2021-10-28 02:43:10.900257"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190964], ["author_id", 980190968], ["created_at", "2021-10-28 02:43:10.903032"], ["updated_at", "2021-10-28 02:43:10.903032"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.5ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190966], ["created_at", "2021-10-28 02:43:10.906973"], ["updated_at", "2021-10-28 02:43:10.906973"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookAuthor Create (0.3ms)[0m  [1m[32mINSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["book_id", 980190963], ["author_id", 980190967], ["created_at", "2021-10-28 02:43:10.910130"], ["updated_at", "2021-10-28 02:43:10.910130"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "authors" DISABLE TRIGGER ALL;ALTER TABLE "book_authors" DISABLE TRIGGER ALL;ALTER TABLE "books" DISABLE TRIGGER ALL;ALTER TABLE "publishers" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.3ms)[0m  [1m[31mDELETE FROM "book_authors";
+DELETE FROM "authors";
+DELETE FROM "books";
+DELETE FROM "publishers";
+INSERT INTO "book_authors" ("id", "book_id", "author_id", "created_at", "updated_at") VALUES (980190962, 1, 1, '2021-10-28 02:43:10.948752', '2021-10-28 02:43:10.948752'), (298486374, 1, 1, '2021-10-28 02:43:10.948752', '2021-10-28 02:43:10.948752');
+INSERT INTO "authors" ("id", "first_name", "last_name", "created_at", "updated_at") VALUES (980190962, 'MyString', NULL, '2021-10-28 02:43:10.951663', '2021-10-28 02:43:10.951663'), (298486374, 'MyString', NULL, '2021-10-28 02:43:10.951663', '2021-10-28 02:43:10.951663');
+INSERT INTO "books" ("id", "title", "publisher_id", "proposal_date", "contract_date", "published_date", "units_sold", "created_at", "updated_at") VALUES (980190962, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 02:43:10.954612', '2021-10-28 02:43:10.954612'), (298486374, 'MyString', 1, '2017-09-11', '2017-09-11', '2017-09-11', 1, '2021-10-28 02:43:10.954612', '2021-10-28 02:43:10.954612');
+INSERT INTO "publishers" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2021-10-28 02:43:10.957519', '2021-10-28 02:43:10.957519'), (298486374, 'MyString', '2021-10-28 02:43:10.957519', '2021-10-28 02:43:10.957519')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "authors" ENABLE TRIGGER ALL;ALTER TABLE "book_authors" ENABLE TRIGGER ALL;ALTER TABLE "books" ENABLE TRIGGER ALL;ALTER TABLE "publishers" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+SeleniumTests: test_test_creating_a_book
+----------------------------------------
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+SeleniumTests: test_test_creating_a_publisher
+---------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SeleniumTests: test_test_creating_an_author
+-------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
