@@ -3,6 +3,7 @@ require 'test_helper'
 class BooksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @book = books(:one)
+    puts @book.publisher_id
   end
 
   test "should get index" do

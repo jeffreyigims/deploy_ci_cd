@@ -16,6 +16,8 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create author" do
+    puts @author.first_name
+    puts @author.last_name
     assert_difference('Author.count') do
       post authors_url, params: { author: { first_name: @author.first_name, last_name: @author.last_name } }
     end

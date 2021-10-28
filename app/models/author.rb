@@ -5,7 +5,7 @@ class Author < ApplicationRecord
   has_many :books, through: :book_authors
 
   # Validations
-  validates_presence_of :first_name, :last_name         
+  # validates_presence_of :first_name, :last_name         
 
   # Scopes
   scope :alphabetical, -> { order('last_name, first_name') }

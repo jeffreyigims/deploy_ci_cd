@@ -9,7 +9,8 @@ language: ruby
 #   server"
 ##########
 rvm: 2.7.4
-script: ""
+script: 
+  - "rails test/controllers/authors_controller_test"
 deploy:
   provider: heroku 
   api_key:

@@ -27,6 +27,8 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
+    puts @book
+    puts @book.valid?
 
     respond_to do |format|
       if @book.save
