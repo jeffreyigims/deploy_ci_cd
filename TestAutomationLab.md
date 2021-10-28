@@ -85,7 +85,7 @@ In the previous part of the lab, we were able to achieve apply testing and deplo
 
 3. Selenium is a tool that allows us to test our application from end-to-end to ensure our appliction is functioning the way we expect it to. The tool includes a web driver so we can simulate our tests like how a user would interact with our app.
 
-4. Add `gem 'selenium-webdriver'` to your gem file. 
+4. Add `gem 'selenium-webdriver'` to your gem file, and run `bundle install`.
 
 5. Create a file called `selenium_tests.rb` in the test directory of your app and paste in the following contents: 
 

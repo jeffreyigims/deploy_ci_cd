@@ -2,7 +2,7 @@ language: ruby
 addons:
   chrome: stable
 before_install: 
-  - # start your web application and listen on `localhost`
+  - bundle exec rails server
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 rvm: 2.7.4
 services:
