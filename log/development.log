@@ -7012,3 +7012,5 @@ Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.2ms)
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (8.4ms)[0m  [1m[35mCREATE DATABASE "bookmanager_development" ENCODING = 'utf8'[0m
   [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "bookmanager_test" ENCODING = 'utf8'[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE DATABASE "bookmanager_development" ENCODING = 'utf8'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE "bookmanager_test" ENCODING = 'utf8'[0m

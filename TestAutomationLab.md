@@ -34,7 +34,7 @@
 	script:
 	  - "bundle exec rails test test/controllers/authors_controller_test"
 	```
-	Note we are specifying a Ruby version for Travis to use during the build. 	The script argument specifies what commands Travis will execute when we push 	our changes to GitHub. We want Travis to execute our test suite when we push 	code changes.
+	Note we are specifying a Ruby version for Travis to use during the build. The script argument specifies what commands Travis will execute when we push our changes to GitHub. We want Travis to execute our test suite when we push code changes.
 	
 5. Let's push our changes to GitHub with the `.travis.yml` file now added. We can see the status of our build on GitHub and on Travis. On GitHub, navigate to our branch and click on the status symbol next to the unique commit identifier and then click details to view our Travis checks. We can also see the status from the [Travis](https://travis-ci.com) dashboard. Verify that the build successfully completes.
 
@@ -46,7 +46,7 @@
 	  only: 
 	    - main
 	```
-	Note we are specifying Travis to build our app on pull requests into the 	main branch only.
+	Note we are specifying Travis to build our app on pull requests into the main branch only.
 	
 10. Push the changes to GitHub, and open a pull request from our staging branch into main. You should see the Travis build start to run on the pull request page. When the apps builds successfully, Travis will notify you that the changes pass inspectionn can be merged into main. Merge the pull request.
 
@@ -58,17 +58,18 @@
 
 9. Navigate back to your `.travis.yml` file and paste in the following contents:
 	
-```
-deploy:
-  provider: heroku
-  api_key: 
-    secure: API_KEY_PLACEHOLDER
-  app: NAME_OF_APP_PLACEHOLDER
-  on: main
- run:
-   - "rails db:migrate"
-   - "rails db:seed"
-```
+	```
+	deploy:
+	  provider: heroku
+	  api_key: 
+	    secure: API_KEY_PLACEHOLDER
+	  app: NAME_OF_APP_PLACEHOLDER
+	  on: main
+	  run:
+	    - "rails db:migrate"
+	    - "rails db:seed"
+	```
+	Note that we are also specifying for Heroku to migrate and seed our database when the app is deployed.
 	
 
 7. Run `travis encrypt $(heroku auth:token) --add deploy.api_key --com` from the command line to fetch your encrypted Heroku API key and put it in our placeholder.
